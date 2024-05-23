@@ -50,7 +50,7 @@ void solve(int n)
     }
 
 
-    int space2 = 8;
+    int space2 = 2*n-2;
     for (int i =1;i<=n;i++)
     {
         // stars

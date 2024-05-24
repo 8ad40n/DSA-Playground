@@ -72,6 +72,47 @@ void vectorSolve()
 
 
 
+    // Erase:
+    vector<int> v6= {1,2,3,4,5,6,7,8};
+    v6.erase(v6.begin()); // delete 1 {2,3,4,5,6,7,8}
+    v6.erase(v6.begin()+1); // delete 3 {2,4,5,6,7,8}
+
+    v6.erase(v6.begin()+1, v6.begin()+4); // {2,7,8}
+    // here the second portion should be after the point we want to delete 
+
+    cout<<endl<<endl;
+    for (auto it : v6)
+    {
+        cout<<it<<endl;
+    }
+
+
+    // Insert function:
+    vector <int> v7(3,100); // {100,100,100}
+    v7.insert(v7.begin(),300) // {300,100,100,100}
+    v7.insert(v7.begin()+1, 2, 10) // {300,10,10,100,100,100}
+    // here 2 is number of insertion and 10 is element
+
+
+    // size
+    cout<<v7.size()<<endl;
+
+    // pop
+    v7.pop_back(); // {300,10,10,100,100}
+
+    // swap
+    v6.swap(v7);
+
+    // clear
+    v7.clear(); //erases the entire vector
+
+
+    // empty
+    cout<< v7.empty()<<endl; // is vector has nothing: True else False
+    
+
+
+
 
 }
 

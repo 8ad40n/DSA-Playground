@@ -10,7 +10,7 @@ void multisetSolve()
     s.insert(2); // 1 2
     s.insert(2); // 1 2 2
 
-    int cnt = count(2); // Ans: 2 // will count the number of 2
+    int cnt = s.count(2); // Ans: 2 // will count the number of 2
     
 }
 

@@ -21,7 +21,7 @@ void setSolve()
 
     s.erase(4); // 1 2 3 // takes logarithmic time
 
-    int cnt = count(1); // if exists =1  else 0
+    int cnt = s.count(1); // if exists =1  else 0
 
 
     auto it = s.find(3);

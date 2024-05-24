@@ -13,7 +13,7 @@ void stackSolve()
 
     cout<<s.top()<<endl;  // 2
     cout<<s.size()<<endl; // 2
-    cout<<s.empty()<<endl; // False
+    cout<<s.empty()<<endl; // False/ 0
 
 }
 

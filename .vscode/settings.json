@@ -7,6 +7,14 @@
         "xstring": "cpp",
         "initializer_list": "cpp",
         "xutility": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "exception": "cpp",
+        "ios": "cpp",
+        "istream": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "streambuf": "cpp",
+        "tuple": "cpp",
+        "xiosbase": "cpp"
     }
 }

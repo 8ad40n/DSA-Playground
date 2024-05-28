@@ -18,4 +18,5 @@ void listSolve()
 int main()
 {
     listSolve();
+    
 }

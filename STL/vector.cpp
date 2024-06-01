@@ -89,8 +89,8 @@ void vectorSolve()
 
     // Insert function:
     vector <int> v7(3,100); // {100,100,100}
-    v7.insert(v7.begin(),300) // {300,100,100,100}
-    v7.insert(v7.begin()+1, 2, 10) // {300,10,10,100,100,100}
+    v7.insert(v7.begin(),300); // {300,100,100,100}
+    v7.insert(v7.begin()+1, 2, 10); // {300,10,10,100,100,100}
     // here 2 is number of insertion and 10 is element
 
 

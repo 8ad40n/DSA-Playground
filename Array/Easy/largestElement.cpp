@@ -6,12 +6,14 @@ using namespace std;
 
 int bruteforce(int arr[], int n)
 {
+    // O(nlog(n))
     sort(arr, arr+n);
     return arr[n-1];
 }
 
 int optimal(int arr[], int n)
 {
+    // O(n)
     int max=arr[0];
     for(int i=0;i<n;i++)
     {

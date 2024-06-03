@@ -15,7 +15,7 @@ void sortSolve()
     sort(a+2,a+4); // 1 2 (3 5) 4
 
     // in decending order:
-    sort(a,a+n, greater<int>); // 5 4 3 2 1
+    sort(a,a+n, greater<int>()); // 5 4 3 2 1
 
 
 }

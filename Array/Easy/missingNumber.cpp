@@ -93,4 +93,5 @@ int main()
 
     vector<int> arr3 = {1, 2, 4, 5};
     cout<<optimalXor(arr3,n)<<endl;
+
 }

@@ -16,9 +16,10 @@ void solve(int A[], int B[], int n, int m)
                  visi[j]=1;
                  break;
              }
+
              if(B[j]>A[i])
              {
-                 break;;
+                 break;
              }
          }
     }

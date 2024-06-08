@@ -15,7 +15,7 @@ int optimal(int arr[], int n)
 {
     // O(n)
     int max=arr[0];
-    for(int i=0;i<n;i++)
+    for(int i=1;i<n;i++)
     {
         if(arr[i]>max)
         {

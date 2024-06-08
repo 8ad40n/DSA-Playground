@@ -85,6 +85,8 @@ int better2(vector<int> &arr)
 
 int optimalXor(vector<int> &arr)
 {
+    // {1,2,1,2,4};
+    
     //size of the array:
     int n = arr.size();
 

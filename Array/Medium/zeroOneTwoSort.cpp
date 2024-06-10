@@ -22,6 +22,7 @@ void better(vector<int> &arr, int n) {
 
 // Dutch National Flag Algorithm
 void optimal(vector<int> &arr, int n) {
+    // O(N)
     int low = 0, mid = 0, high = n - 1; // 3 pointers
 
     while (mid <= high) {

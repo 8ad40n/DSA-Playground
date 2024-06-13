@@ -17,6 +17,7 @@
         "tuple": "cpp",
         "xiosbase": "cpp",
         "algorithm": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "vector": "cpp"
     }
 }

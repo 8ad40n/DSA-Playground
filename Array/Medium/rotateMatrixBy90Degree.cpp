@@ -17,6 +17,7 @@ vector < vector < int >> bruteforce(vector < vector < int >> & matrix) {
 
 
 void optimal(vector < vector < int >> & matrix) {
+    // O(N*N) + O(N*N)
     int n = matrix.size();
     //transposing the matrix
     for (int i = 0; i < n; i++) {

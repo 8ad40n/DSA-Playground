@@ -1,3 +1,7 @@
+//  STL Lower bound:
+//  lb= lower_bound(a.begin(), a.end(), x)
+
+
 
 #include <bits/stdc++.h>
 using namespace std;

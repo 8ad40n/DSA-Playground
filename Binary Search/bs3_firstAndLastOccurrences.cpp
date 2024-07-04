@@ -51,7 +51,7 @@ pair<int, int> solve(vector<int> &arr, int n, int x) {
 
 int main() {
   int n = 7;
-  int key = 41;
+  int key = 13;
   vector < int > v = {3,4,13,13,13,20,40};
   pair<int, int> ans = solve(v, n, key);
   cout << ans.first <<" "<<ans.second;

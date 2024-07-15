@@ -46,7 +46,7 @@ int main()
     vector<int> v = {7, 15, 6, 3};
     int h = 8;
     int ans = minimumRateToEatBananas(v, h);
-    cout << "Koko should eat atleast " << ans << " bananas/hr.\n";
+    cout << "Koko should eat atleast " << ans << " bananas/hour.\n";
     return 0;
 }
 

@@ -41,6 +41,15 @@ Node* print(Node* head)
     cout<<endl;
 }
 
+// Delete head
+Node* DeleteHead(Node* head)
+{
+    Node* temp = head;
+    head = head->next;
+    // free(temp);
+    delete  temp;
+    return head;
+}
 
 int main()
 {
@@ -48,5 +57,8 @@ int main()
     Node* head = convertToLL(arr);
     cout<<head->data<<endl;
     print(head);
+
+    Node* deleteHead = DeleteHead(head);
+    print(deleteHead);
 
 }

@@ -145,7 +145,7 @@ int main()
     // Node* deleteFromPosition = DeleteFromPosition(head,3);
     // print(deleteFromPosition);
 
-    // Node* deleteWithValue = DeleteWithValue(head,5);
-    // print(deleteWithValue);
+    Node* deleteWithValue = DeleteWithValue(head,5);
+    print(deleteWithValue);
 
 }

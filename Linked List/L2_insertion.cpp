@@ -66,32 +66,31 @@ Node* InsertTail(Node* head, int val)
     return head;
 }
 
-// Delete from position
-Node* DeleteFromPosition(Node* head, int k)
+// Insert at Kth position
+Node* InsertAtKPosition(Node* head, int el, int k)
 {
-    if(head == NULL) return head;
+    if(head == NULL)
+    {
+        if(k==1) return new Node(el);
+        else return NULL;
+    }
     if(k==1)
     {
-       Node* temp = head;
-       head = head->next;
-       delete  temp;
-       return head; 
+        Node* temp = new Node(el,head);
+        return temp;
     }
-
-    int cnt = 0;
+    int cnt=0;
     Node* temp = head;
-    Node* prev = NULL;
-
-    while (temp!= NULL)
+    while(temp!=NULL)
     {
         cnt++;
-        if(cnt == k)
+        if(cnt == k-1)
         {
-            prev->next = prev->next->next;
-            delete temp;
-            break;
+            Node* x = new Node(el);
+            x->next = temp->next;
+            temp->next = x;
+            return head;
         }
-        prev = temp;
         temp = temp->next;
     }
     return head;
@@ -134,14 +133,14 @@ int main()
     cout<<head->data<<endl;
     print(head);
 
-    Node* insertHead = InsertHead(head, 100);
-    print(insertHead);
+    // Node* insertHead = InsertHead(head, 100);
+    // print(insertHead);
 
-    Node* insertTail = InsertTail(head, 100);
-    print(insertTail);
+    // Node* insertTail = InsertTail(head, 100);
+    // print(insertTail);
 
-    // Node* deleteFromPosition = DeleteFromPosition(head,3);
-    // print(deleteFromPosition);
+    Node* insertAtKPosition = InsertAtKPosition(head,100,3);
+    print(insertAtKPosition);
 
     // Node* deleteWithValue = DeleteWithValue(head,5);
     // print(deleteWithValue);

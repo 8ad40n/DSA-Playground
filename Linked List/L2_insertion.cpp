@@ -97,30 +97,23 @@ Node* InsertAtKPosition(Node* head, int el, int k)
 }
 
 
-// Delete with value
-Node* DeleteWithValue(Node* head, int val)
+// Insert before value
+Node* InserBeforeValue(Node* head, int el, int val)
 {
-    if(head == NULL) return head;
-    if(head->data == val)
+    if(head->data == NULL)
     {
-       Node* temp = head;
-       head = head->next;
-       delete  temp;
-       return head; 
+        return new Node(el);
     }
-
     Node* temp = head;
-    Node* prev = NULL;
-
-    while (temp!= NULL)
+    while(temp->next!=NULL)
     {
-        if(temp->data == val)
+        if(temp->next->data == val)
         {
-            prev->next = prev->next->next;
-            delete temp;
-            break;
+            Node* x = new Node(el);
+            x->next = temp->next;
+            temp->next = x;
+            return head;
         }
-        prev = temp;
         temp = temp->next;
     }
     return head;
@@ -139,10 +132,10 @@ int main()
     // Node* insertTail = InsertTail(head, 100);
     // print(insertTail);
 
-    Node* insertAtKPosition = InsertAtKPosition(head,100,3);
-    print(insertAtKPosition);
+    // Node* insertAtKPosition = InsertAtKPosition(head,100,3);
+    // print(insertAtKPosition);
 
-    // Node* deleteWithValue = DeleteWithValue(head,5);
-    // print(deleteWithValue);
+    Node* inserBeforeValue = InserBeforeValue(head,100,8);
+    print(inserBeforeValue);
 
 }

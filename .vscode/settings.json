@@ -18,7 +18,8 @@
         "xiosbase": "cpp",
         "algorithm": "cpp",
         "limits": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "new": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

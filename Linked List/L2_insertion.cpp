@@ -47,22 +47,22 @@ Node* print(Node* head)
 // Insert at head
 Node* InsertHead(Node* head, int val)
 {
+    if(head == NULL) return new Node(val);
+
     Node* temp = new Node(val,head);
     return temp;
 }
-// Delete tail
-Node* DeleteTail(Node* head)
+// Insert at tail
+Node* InsertTail(Node* head, int val)
 {
-    if (head == NULL || head->next == NULL) return NULL;
+    if(head == NULL) return new Node(val);
 
     Node* temp = head;
-    while (temp->next->next != NULL) 
+    while(temp->next != NULL)
     {
         temp = temp->next;
     }
-    delete temp->next;
-   
-    temp->next = nullptr;
+    temp->next = new Node(val);
     return head;
 }
 
@@ -137,8 +137,8 @@ int main()
     Node* insertHead = InsertHead(head, 100);
     print(insertHead);
 
-    // Node* deleteTail = DeleteTail(head);
-    // print(deleteTail);
+    Node* insertTail = InsertTail(head, 100);
+    print(insertTail);
 
     // Node* deleteFromPosition = DeleteFromPosition(head,3);
     // print(deleteFromPosition);

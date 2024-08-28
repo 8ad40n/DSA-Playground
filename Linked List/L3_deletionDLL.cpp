@@ -25,18 +25,21 @@ struct Node{
 // convert arr to LL
 Node* convertToDLL(vector<int>&arr)
 {
+    if (arr.empty()) return nullptr;
+
     Node* head = new Node(arr[0]);
     Node* prev = head;
     for (int i =1; i < arr.size(); i++)
     {
-        Node* temp = new Node(arr[i]);
+        Node* temp = new Node(arr[i], nullptr, prev);
+        // temp->back = prev;
         prev->next = temp;
         prev = temp;
     }
     return head;
 }
 
-Node* print(Node* head)
+void print(Node* head)
 {
     Node* temp = head;
     while(temp)
@@ -62,6 +65,25 @@ Node* DeleteHead(Node* head)
     return head;
 }
 
+Node* DeleteTail(Node* head)
+{
+    if(head==NULL || head->next==NULL)
+    {
+        return NULL;
+    }
+    Node* tail = head;
+    while(tail->next!=NULL)
+    {
+        tail = tail->next;
+    }
+    Node* prev = tail->back;
+    prev->next = nullptr;
+    tail->back = nullptr;
+    delete tail;
+
+    return head;
+}
+
 
 int main(){
 
@@ -69,6 +91,9 @@ int main(){
     Node* head = convertToDLL(v);
     print(head);
 
-    Node* deleteHead = DeleteHead(head);
-    print(deleteHead);
+    // Node* deleteHead = DeleteHead(head);
+    // print(deleteHead);
+
+    Node* deleteTail = DeleteTail(head);
+    print(deleteTail);
 }

@@ -84,6 +84,81 @@ Node* DeleteTail(Node* head)
     return head;
 }
 
+Node* deleteHead(Node* head) {
+    if (head == nullptr || head->next == nullptr) {
+        return nullptr; 
+    }
+
+    Node* prev = head;      
+    head = head->next;    
+
+    head->back = nullptr;   
+
+    prev->next = nullptr;  
+
+    return head;          
+}
+
+Node* deleteTail(Node* head) {
+    if (head == nullptr || head->next == nullptr) {
+        return nullptr;  
+    }
+    
+    Node* tail = head;
+    while (tail->next != nullptr) {
+        tail = tail->next; 
+    }
+    
+    Node* newTail = tail->back;
+    newTail->next = nullptr;
+    tail->back = nullptr;
+    
+    delete tail;  
+    
+    return head;
+}
+
+Node* DeleteKthElement(Node* head, int k)
+{
+    if(head == NULL)
+    {
+        return NULL;
+    }
+    Node* temp = head;
+    int cnt = 0;
+    while(temp!=NULL) {
+        cnt++;
+        if(cnt == k)
+        {
+            break;
+        }
+        temp = temp->next;
+    }
+    Node* prev = temp->back;
+    Node* front = temp->next;
+
+    if(prev == NULL && front == NULL)
+    {
+        delete temp;
+        return NULL;
+    }
+    else if(prev == NULL)
+    {
+        deleteHead(head);
+    }
+    else if(front == NULL)
+    {
+        deleteTail(head);
+    }
+    prev -> next = front;
+    front -> back = prev;
+    temp->next = nullptr;
+    temp->back = nullptr;
+    delete temp;
+    
+    return head;
+}
+
 
 int main(){
 
@@ -94,6 +169,9 @@ int main(){
     // Node* deleteHead = DeleteHead(head);
     // print(deleteHead);
 
-    Node* deleteTail = DeleteTail(head);
-    print(deleteTail);
+    // Node* deleteTail = DeleteTail(head);
+    // print(deleteTail);
+
+    Node* deleteKthElement = DeleteKthElement(head, 3);
+    print(deleteKthElement);
 }

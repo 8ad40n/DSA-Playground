@@ -159,6 +159,26 @@ Node* DeleteKthElement(Node* head, int k)
     return head;
 }
 
+void DeleteNode(Node* temp)
+{
+    Node* prev = temp->back;
+    Node* front = temp->next;
+
+    if(front == NULL)
+    {
+        prev -> next = nullptr;
+        temp->back = nullptr;
+        delete temp;
+        return;
+    }
+    prev -> next = front;
+    front -> back = prev;
+    temp -> next = nullptr;
+    temp -> back = nullptr;
+    delete temp;
+
+}
+
 
 int main(){
 
@@ -172,6 +192,10 @@ int main(){
     // Node* deleteTail = DeleteTail(head);
     // print(deleteTail);
 
-    Node* deleteKthElement = DeleteKthElement(head, 3);
-    print(deleteKthElement);
+    // Node* deleteKthElement = DeleteKthElement(head, 3);
+    // print(deleteKthElement);
+
+
+    DeleteNode(head->next);
+    print(head);
 }

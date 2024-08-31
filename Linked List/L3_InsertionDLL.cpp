@@ -107,23 +107,12 @@ Node* InsertBeforeKthElement(Node* head, int val, int k) {
 }
 
 
-void DeleteNode(Node* temp)
+void InsertBeforeNode(Node* node, int val)
 {
-    Node* prev = temp->back;
-    Node* front = temp->next;
-
-    if(front == NULL)
-    {
-        prev -> next = nullptr;
-        temp->back = nullptr;
-        delete temp;
-        return;
-    }
-    prev -> next = front;
-    front -> back = prev;
-    temp -> next = nullptr;
-    temp -> back = nullptr;
-    delete temp;
+    Node* prev = node->back;
+    Node* newNode = new Node(val, node, prev);
+    prev->next = newNode;
+    node->back = newNode;
 
 }
 
@@ -140,10 +129,10 @@ int main(){
     // Node* insertBeforeTail = InsertBeforeTail(head,10);
     // print(insertBeforeTail);
 
-    Node* insertBeforeKthElement = InsertBeforeKthElement(head, 10, 3);
-    print(insertBeforeKthElement);
+    // Node* insertBeforeKthElement = InsertBeforeKthElement(head, 10, 3);
+    // print(insertBeforeKthElement);
 
 
-    // DeleteNode(head->next);
-    // print(head);
+    InsertBeforeNode(head->next, 10);
+    print(head);
 }

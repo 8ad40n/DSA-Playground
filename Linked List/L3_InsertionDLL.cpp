@@ -81,6 +81,32 @@ Node* InsertBeforeTail(Node* head, int val) {
 }
 
 
+Node* InsertBeforeKthElement(Node* head, int val, int k) {
+    if(k==1)
+    {
+        Node* newNode = new Node(val, head, nullptr);
+        head->back = newNode;
+        return newNode;
+    } 
+    Node* temp = head;
+    int cnt =0;
+    while(temp != NULL)
+    {
+        cnt++;
+        if(cnt == k){
+            break;
+        }
+        temp = temp->next;
+    }
+    Node* prev = temp->back;
+    Node* newNode = new Node(val, temp, prev);
+    prev->next = newNode;
+    temp->back = newNode;
+    
+    return head;
+}
+
+
 void DeleteNode(Node* temp)
 {
     Node* prev = temp->back;
@@ -111,11 +137,11 @@ int main(){
     // Node* insertBeforeHead = InsertBeforeHead(head,10);
     // print(insertBeforeHead);
 
-    Node* insertBeforeTail = InsertBeforeTail(head,10);
-    print(insertBeforeTail);
+    // Node* insertBeforeTail = InsertBeforeTail(head,10);
+    // print(insertBeforeTail);
 
-    // Node* deleteKthElement = DeleteKthElement(head, 3);
-    // print(deleteKthElement);
+    Node* insertBeforeKthElement = InsertBeforeKthElement(head, 10, 3);
+    print(insertBeforeKthElement);
 
 
     // DeleteNode(head->next);

@@ -133,6 +133,6 @@ int main(){
     // print(insertBeforeKthElement);
 
 
-    InsertBeforeNode(head->next, 10);
-    print(head);
+    // InsertBeforeNode(head->next, 10);
+    // print(head);
 }

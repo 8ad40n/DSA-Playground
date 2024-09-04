@@ -66,15 +66,44 @@ Node* reverseDLL(Node* head){
 
 }
 
+Node* reverseDLLOptimal(Node* head) {
+
+    if (head == NULL || head->next == NULL) {
+        return head; 
+    }
+
+    Node* prev = NULL;  
+    Node* current = head;   
+    while (current != NULL) {
+        prev = current->back; 
+        current->back = current->next; 
+        current->next = prev;          
+        current = current->back; 
+    }
+    return prev->back;
+}
+
 
 int main() {
+    // vector<int> arr = {12, 5, 8, 7, 4};
+    // Node* head = convertArr2DLL(arr);
+    // cout << endl << "Doubly Linked List Initially:  " << endl;
+    // print(head);
+    // cout << endl << "Doubly Linked List After Reversing " << endl;
+
+    // head = reverseDLL(head);
+    // print(head);
+
+
+    // optimal
     vector<int> arr = {12, 5, 8, 7, 4};
     Node* head = convertArr2DLL(arr);
     cout << endl << "Doubly Linked List Initially:  " << endl;
     print(head);
     cout << endl << "Doubly Linked List After Reversing " << endl;
-
-    head = reverseDLL(head);
+    
+     // Insert a node with value 10 at the end
+    head = reverseDLLOptimal(head);
     print(head);
 }
 

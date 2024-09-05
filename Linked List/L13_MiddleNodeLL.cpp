@@ -44,6 +44,19 @@ Node *findMiddle(Node *head) {
     return temp;
 }
 
+Node* findMiddleOptimal(Node *head) {
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    Node* slow = head;
+    Node* fast = head;
+    while(fast != NULL && fast->next != NULL) {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
+}
+
 int main() {
     Node* head = new Node(1);
     head->next = new Node(2);
@@ -51,7 +64,8 @@ int main() {
     head->next->next->next = new Node(4);
     head->next->next->next->next = new Node(5);
 
-    cout<<findMiddle(head)->data;
+    cout<<findMiddle(head)->data<<endl;
+    cout<<findMiddleOptimal(head)->data;
 
     return 0;
 }

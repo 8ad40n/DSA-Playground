@@ -57,6 +57,19 @@ Node* reverseLL(Node* head){
 
 }
 
+Node* reverseLLOptimal(Node* head)
+{
+    Node* temp = head;  
+    Node* prev = NULL;  
+    
+    while(temp != NULL){  
+       Node* front = temp->next;  
+       temp->next = prev;  
+       prev = temp;  
+       temp = front; 
+   }
+   return prev; 
+}
 
 // print
 Node* print(Node* head)
@@ -76,8 +89,12 @@ int main(){
     vector<int> v {1,2,3,4,5,6};
     Node* head = convertToLL(v);
     print(head);
-    Node* brute = reverseLL(head);
-    print(brute);
+
+    // Node* brute = reverseLL(head);
+    // print(brute);
+
+    Node* optimal = reverseLLOptimal(head);
+    print(optimal);
 
 
 }

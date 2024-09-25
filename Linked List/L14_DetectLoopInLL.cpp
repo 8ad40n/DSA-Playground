@@ -34,6 +34,21 @@ bool detectLoop_BruteForce(Node* head) {
     return false;
 }
 
+bool detectCycle_Optimal_TortoiseAndHare(Node* head) {
+    Node* slow = head;
+    Node* fast = head;
+
+    while (fast != nullptr && fast->next != nullptr) {
+        slow = slow->next;
+        fast = fast->next->next;
+
+        if (slow == fast) {
+            return true;  
+        }
+    }
+    return false;
+}
+
 int main() {
     
     Node* head = new Node(1);
@@ -49,7 +64,13 @@ int main() {
      // Create a loop
     fifth->next = third; 
 
-    if (detectLoop_BruteForce(head)) {
+    // if (detectLoop_BruteForce(head)) {
+    //     cout << "Loop detected in the linked list." << endl;
+    // } else {
+    //     cout << "No loop detected in the linked list." << endl;
+    // }
+
+    if (detectCycle_Optimal_TortoiseAndHare(head)) {
         cout << "Loop detected in the linked list." << endl;
     } else {
         cout << "No loop detected in the linked list." << endl;

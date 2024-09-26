@@ -35,6 +35,31 @@ Node* detectLoop(Node* head) {
     return nullptr; 
 }
 
+
+Node* firstNodeOptimal(Node* head) {
+    
+    Node* slow = head;  
+    Node* fast = head;  
+
+    while (fast != NULL && fast->next != NULL) {
+        slow = slow->next;        
+        fast = fast->next->next;  
+
+        if (slow == fast) {
+
+            slow = head; 
+            while (slow != fast) {
+
+                slow = slow->next;  
+                fast = fast->next;  
+            }
+            return slow;  
+        }
+    }
+    return NULL; 
+}
+
+
 int main() {
     Node* node1 = new Node(1);
     Node* node2 = new Node(2);
@@ -50,7 +75,7 @@ int main() {
 
     Node* head = node1;
 
-    Node* loopStartNode = detectLoop(head);
+    Node* loopStartNode = firstNodeOptimal(head);
 
     if (loopStartNode) {
         cout << "Loop detected. Starting node of the loop is: " << loopStartNode->data << endl;

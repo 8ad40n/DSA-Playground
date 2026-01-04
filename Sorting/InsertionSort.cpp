@@ -20,5 +20,6 @@ int main(){
     }
 }
 
-// O(n)^2 time complexity
+// O(n)^2 time complexity in worst and average case
+// O(n) time complexity in best case when array is already sorted
 // O(1) space complexity
